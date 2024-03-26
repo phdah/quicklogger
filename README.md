@@ -13,9 +13,13 @@ This project presents a powerful Command-Line Interface (CLI) tool built in C++,
 
 ## Roadmap
 
-* [ ] POC the initial CLI using Python for fast development
+* [x] POC the initial CLI using Python for fast development
+* [ ] Rewrite module(s) in `c++`
+* [ ] POC a frontend for the output, e.g., `TODO`'s and `LOG`'s
+* [ ] Define a fronted, reachable without the terminal, to interact with the QuickLogger CLI, to add entries with proper pickers
 
 | Feature | Status ✅ / 🟨 |
 | --- | --- |
-| | |
+| Output logs in a proper database | 🟨 |
+| Make the databse reachable from the cli, to extract or view the data | 🟨 |
 
