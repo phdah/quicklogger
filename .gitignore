@@ -6,4 +6,4 @@
 *.dSYM/
 
 # Binary
-ql
+bin/

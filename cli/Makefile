@@ -8,10 +8,12 @@ CFLAGS = -Wall -std=c++17 -O3
 INCLUDE_DIR = -Iinclude
 
 # Source files
-SRC = $(wildcard src/*.cpp)
+SRC = $(wildcard src/*.cpp) \
+       $(wildcard src/components/*.cpp) \
+       $(wildcard src/systems/*.cpp)
 
 # Executabble
-EXE = ql
+EXE = bin/ql
 
 $(EXE):
 	@$(CC) $(CFLAGS) $(SRC) -o $(EXE) $(INCLUDE_DIR)
@@ -22,5 +24,5 @@ debug:
 clean:
 	@rm -rf $(BUILD_DIR) $(EXE) *.dSYM
 
-.PHONY: clean ql debug
+.PHONY: clean bin/ql debug
 
