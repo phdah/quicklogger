@@ -1,2 +1,9 @@
+# QuickLogger output files
 *.txt
 *.md
+
+# LLDB source
+*.dSYM/
+
+# Binary
+ql
