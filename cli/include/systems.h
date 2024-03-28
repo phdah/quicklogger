@@ -10,6 +10,10 @@ public:
 class InputSystem {
 public:
     void process(Entity &entity);
+    const std::string getPrompt(Entity &entity);
+    bool isValidURL(const std::string &url);
+    const std::string webScrape(const std::string &url);
+
 };
 
 class LLMQuerySystem {

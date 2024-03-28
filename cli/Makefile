@@ -5,7 +5,11 @@ CC = clang++
 CFLAGS = -Wall -std=c++17 -O3
 
 # Include directory
-INCLUDE_DIR = -Iinclude
+INCLUDE_DIRS = -Iinclude -I/opt/homebrew/opt/*/include
+
+# Linker flags
+LDFLAGS= -L/opt/homebrew/opt/curl/lib -lcurl
+
 
 # Source files
 SRC = $(wildcard src/*.cpp) \
@@ -16,10 +20,13 @@ SRC = $(wildcard src/*.cpp) \
 EXE = bin/ql
 
 $(EXE):
-	@$(CC) $(CFLAGS) $(SRC) -o $(EXE) $(INCLUDE_DIR)
+	@$(CC) $(CFLAGS) $(SRC) -o $(EXE) $(INCLUDE_DIRS) $(LDFLAGS)
 
 debug:
-	@$(CC) -g $(CFLAGS) '-DDEBUG_FLAG="true"' $(SRC) -o $(EXE) $(INCLUDE_DIR)
+	@$(CC) -g $(CFLAGS) '-DDEBUG_FLAG="true"' $(SRC) -o $(EXE) $(INCLUDE_DIRS) $(LDFLAGS)
+
+run: $(EXE)
+	$(EXE)
 
 clean:
 	@rm -rf $(BUILD_DIR) $(EXE) *.dSYM

@@ -19,7 +19,17 @@ public:
 
 class InputComponent {
 public:
-    std::string data;
+    std::string prompt;
+    //
+    // Helper functions for picker selectino
+    const std::string get() {
+        return prompt;
+    }
+
+    void print() {
+        std::cout << "Prompt: " << prompt << std::endl;
+    }
+
 };
 
 class LLMQueryComponent {
