@@ -8,9 +8,11 @@ void PickerSystem::process(Entity &entity) {
     std::cout << "Select template (TODO/LOG): ";
 
 
-    // NOTE: DEBUG cin
-    /* std::getline(std::cin, entity.pickerComponent.selectedPicker); */
+    #ifdef DEBUG_FLAG
     entity.pickerComponent.selectedPicker = "TODO";
+    #else
+    std::getline(std::cin, entity.pickerComponent.selectedPicker);
+    #endif
 
 }
 

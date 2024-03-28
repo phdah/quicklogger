@@ -19,7 +19,7 @@ $(EXE):
 	@$(CC) $(CFLAGS) $(SRC) -o $(EXE) $(INCLUDE_DIR)
 
 debug:
-	@$(CC) -g $(CFLAGS) $(SRC) -o $(EXE) $(INCLUDE_DIR)
+	@$(CC) -g $(CFLAGS) '-DDEBUG_FLAG="true"' $(SRC) -o $(EXE) $(INCLUDE_DIR)
 
 clean:
 	@rm -rf $(BUILD_DIR) $(EXE) *.dSYM
